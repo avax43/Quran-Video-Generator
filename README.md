@@ -1,2 +1,2 @@
 # Quran Video Generator
-Work in progress.
+Adding fonts and basics.
