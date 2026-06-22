@@ -1,0 +1,177 @@
+[
+  {
+    "surah": 7,
+    "ayah": 43,
+    "reason": "Word count mismatch",
+    "text_words": 35,
+    "audio_segments": 34
+  },
+  {
+    "surah": 5,
+    "ayah": 4,
+    "reason": "Word count mismatch",
+    "text_words": 31,
+    "audio_segments": 29
+  },
+  {
+    "surah": 2,
+    "ayah": 20,
+    "reason": "Word count mismatch",
+    "text_words": 25,
+    "audio_segments": 24
+  },
+  {
+    "surah": 2,
+    "ayah": 158,
+    "reason": "Word count mismatch",
+    "text_words": 23,
+    "audio_segments": 24
+  },
+  {
+    "surah": 7,
+    "ayah": 36,
+    "reason": "Word count mismatch",
+    "text_words": 10,
+    "audio_segments": 11
+  },
+  {
+    "surah": 11,
+    "ayah": 29,
+    "reason": "Word count mismatch",
+    "text_words": 22,
+    "audio_segments": 20
+  },
+  {
+    "surah": 9,
+    "ayah": 60,
+    "reason": "Word count mismatch",
+    "text_words": 22,
+    "audio_segments": 21
+  },
+  {
+    "surah": 14,
+    "ayah": 21,
+    "reason": "Word count mismatch",
+    "text_words": 34,
+    "audio_segments": 32
+  },
+  {
+    "surah": 13,
+    "ayah": 16,
+    "reason": "Word count mismatch",
+    "text_words": 45,
+    "audio_segments": 44
+  },
+  {
+    "surah": 12,
+    "ayah": 59,
+    "reason": "Word count mismatch",
+    "text_words": 17,
+    "audio_segments": 16
+  },
+  {
+    "surah": 13,
+    "ayah": 11,
+    "reason": "Word count mismatch",
+    "text_words": 35,
+    "audio_segments": 34
+  },
+  {
+    "surah": 13,
+    "ayah": 22,
+    "reason": "Word count mismatch",
+    "text_words": 18,
+    "audio_segments": 19
+  },
+  {
+    "surah": 13,
+    "ayah": 31,
+    "reason": "Word count mismatch",
+    "text_words": 51,
+    "audio_segments": 50
+  },
+  {
+    "surah": 11,
+    "ayah": 21,
+    "reason": "Word count mismatch",
+    "text_words": 9,
+    "audio_segments": 2
+  },
+  {
+    "surah": 12,
+    "ayah": 53,
+    "reason": "Word count mismatch",
+    "text_words": 15,
+    "audio_segments": 14
+  },
+  {
+    "surah": 10,
+    "ayah": 1,
+    "reason": "Word count mismatch",
+    "text_words": 5,
+    "audio_segments": 4
+  },
+  {
+    "surah": 20,
+    "ayah": 71,
+    "reason": "Word count mismatch",
+    "text_words": 26,
+    "audio_segments": 25
+  },
+  {
+    "surah": 21,
+    "ayah": 31,
+    "reason": "Word count mismatch",
+    "text_words": 13,
+    "audio_segments": 12
+  },
+  {
+    "surah": 33,
+    "ayah": 35,
+    "reason": "Word count mismatch",
+    "text_words": 30,
+    "audio_segments": 29
+  },
+  {
+    "surah": 35,
+    "ayah": 29,
+    "reason": "Word count mismatch",
+    "text_words": 15,
+    "audio_segments": 16
+  },
+  {
+    "surah": 40,
+    "ayah": 64,
+    "reason": "Word count mismatch",
+    "text_words": 21,
+    "audio_segments": 20
+  },
+  {
+    "surah": 50,
+    "ayah": 34,
+    "reason": "Word count mismatch",
+    "text_words": 5,
+    "audio_segments": 3
+  },
+  {
+    "surah": 51,
+    "ayah": 25,
+    "reason": "Word count mismatch",
+    "text_words": 8,
+    "audio_segments": 9
+  },
+  {
+    "surah": 65,
+    "ayah": 11,
+    "reason": "Word count mismatch",
+    "text_words": 34,
+    "audio_segments": 33
+  },
+  {
+    "surah": 61,
+    "ayah": 14,
+    "reason": "Word count mismatch",
+    "text_words": 35,
+    "audio_segments": 33
+  }
+]
