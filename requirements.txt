@@ -1,0 +1,4 @@
+html2image
+moviepy
+requests
+pillow
