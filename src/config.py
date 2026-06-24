@@ -1,0 +1,1 @@
+VIDEO_WIDTH = 720
