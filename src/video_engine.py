@@ -1,3 +1,3 @@
 from moviepy.editor import *
-def prepare_ayah_assets():
+def apply_ken_burns_effect():
     pass
