@@ -1,4 +1,2 @@
+from concurrent.futures import ProcessPoolExecutor
 import src.video_engine
-def main():
-    pass
-if __name__ == '__main__': main()
