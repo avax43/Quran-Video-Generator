@@ -15,7 +15,7 @@
   "AUDIO_CACHE_DIR": "cache/audio",
   "IMAGE_CACHE_DIR": "cache/images",
   "BACKGROUNDS_DIR": "assets/backgrounds",
-  "BACKGROUND_SOURCE": "assets/backgrounds/background4.png",
+  "BACKGROUND_SOURCE": "assets/backgrounds/background6.png",
   "ENABLE_ZOOM": true,
   "BASMALA_TEXT": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
   "STOP_MARKS": [
