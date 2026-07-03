@@ -1,6 +1,6 @@
 # Quran Video Generator
 
-A Python tool that generates vertical videos (720x1280) of Quranic verses. It overlays Arabic Uthmani text with accurate timing and syncs it with audio recitations.
+A Python tool that generates videos of Quranic verses with accurate timing and syncs it with audio recitations.
 
 ## How it works
 
@@ -18,18 +18,41 @@ gen/
 │   ├── renderer.py       # Responsible for rendering HTML to transparent PNGs
 │   ├── utils.py          # Helper functions for downloading audio and formatting text
 │   └── video_engine.py   # Handles FFmpeg and background video logic
+├── assets/
+│   ├── backgrounds/      # Put your background images here
+│   ├── data/             # Quran text and timing JSON files
+│   └── fonts/
 ├── main.py               # The main entry point
 └── config.json           # Your configuration settings
 ```
 
-## Setup
+---
 
-1. **Requirements**: 
-   - Python 3.11 or higher
-   - FFmpeg installed and added to your system PATH
-   - Google Chrome or Chromium (needed for `html2image`)
+## Option A: Use via GitHub Actions (no installation required)
 
-### ⚙️ Installation
+This is the easiest way to generate a video without installing anything on your machine.
+
+1. **Fork** this repository to your own GitHub account.
+2. Go to the **Actions** tab in your fork.
+3. Click on **"Quran Video Generator"** in the left sidebar.
+4. Click **"Run workflow"** and fill in the inputs:
+   - **Surah number** (e.g. `108`)
+   - **Start Ayah** and **End Ayah** (e.g. `1` and `3`)
+   - **Background filename** — just the filename of an image in `assets/backgrounds/` (e.g. `background4.png`)
+5. Click the green **"Run workflow"** button.
+6. Once the workflow finishes, click on the completed run and download the video from the **Artifacts** section at the bottom.
+
+---
+
+## Option B: Run locally (for developers)
+
+### Requirements
+
+- Python 3.11 or higher
+- FFmpeg installed and added to your system PATH
+- Google Chrome or Chromium (needed for `html2image`)
+
+### Installation
 
 1. Clone this repository:
    ```bash
@@ -51,28 +74,23 @@ gen/
    pip install -r requirements.txt
    ```
 
-## Usage
+### Usage
 
-Edit the `config.json` file in the root directory to choose the Surah, Ayah range, and background:
-
-```json
-{
-  "SURAH_NUMBER": 108,
-  "START_AYAH": 1,
-  "END_AYAH": 3,
-  "VIDEO_WIDTH": 720,
-  "VIDEO_HEIGHT": 1280,
-  "FPS": 24,
-  "BACKGROUND_SOURCE": "assets/backgrounds/background4.png"
-}
-```
-
-Run the main script:
+**Option 1 — Edit `config.json` and run:**
 ```bash
 python main.py
 ```
 
+**Option 2 — Pass arguments directly on the command line:**
+```bash
+python main.py --surah 1 --start 1 --end 7 --background background4.png
+```
+
+CLI arguments always override `config.json` values. The `--background` flag accepts either a bare filename (looks inside `assets/backgrounds/` automatically) or a full path.
+
 The output will be saved in the `output/` folder.
+
+---
 
 ## Credits
 

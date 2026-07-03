@@ -31,10 +31,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Override config values with CLI arguments when supplied
-    if args.surah:      config.SURAH_NUMBER      = args.surah
-    if args.start:      config.START_AYAH        = args.start
-    if args.end:        config.END_AYAH          = args.end
-    if args.background: config.BACKGROUND_SOURCE = args.background
+    if args.surah:  config.SURAH_NUMBER = args.surah
+    if args.start:  config.START_AYAH   = args.start
+    if args.end:    config.END_AYAH     = args.end
+    if args.background:
+        # Accept either a bare filename (e.g. "background4.png") or a full path
+        bg = args.background
+        if not os.path.dirname(bg):
+            bg = os.path.join(config.BACKGROUNDS_DIR, bg)
+        config.BACKGROUND_SOURCE = bg
 
     start_time = time.time()
 

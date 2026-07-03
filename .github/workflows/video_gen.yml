@@ -16,9 +16,9 @@ on:
         required: true
         default: '3'
       background_source:
-        description: 'Background image path (relative to repo root, e.g. assets/backgrounds/background4.png)'
+        description: 'Background filename only (e.g. background4.png)'
         required: true
-        default: 'assets/backgrounds/background4.png'
+        default: 'background6.png'
 
 jobs:
   generate:
@@ -38,7 +38,7 @@ jobs:
       run: |
         sudo apt-get update -qq
         sudo apt-get install -y ffmpeg libnss3 libatk-bridge2.0-0 libcups2 \
-          libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2 \
+          libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64 \
           libpangocairo-1.0-0 libgtk-3-0
 
     - name: Install Python dependencies
