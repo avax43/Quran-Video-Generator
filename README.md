@@ -73,3 +73,7 @@ python main.py
 ```
 
 The output will be saved in the `output/` folder.
+
+## Credits
+
+- **Word Timing Data**: Sourced from the [quran-align](https://github.com/cpfair/quran-align) repository by [@cpfair](https://github.com/cpfair), licensed under the MIT License.
