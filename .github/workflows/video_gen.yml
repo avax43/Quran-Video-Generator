@@ -1,0 +1,63 @@
+name: Quran Video Generator
+
+on:
+  workflow_dispatch:
+    inputs:
+      surah_number:
+        description: 'Surah number (1-114)'
+        required: true
+        default: '108'
+      start_ayah:
+        description: 'Start Ayah number'
+        required: true
+        default: '1'
+      end_ayah:
+        description: 'End Ayah number'
+        required: true
+        default: '3'
+      background_source:
+        description: 'Background image path (relative to repo root, e.g. assets/backgrounds/background4.png)'
+        required: true
+        default: 'assets/backgrounds/background4.png'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y ffmpeg libnss3 libatk-bridge2.0-0 libcups2 \
+          libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2 \
+          libpangocairo-1.0-0 libgtk-3-0
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Generate video
+      run: |
+        python main.py \
+          --surah ${{ github.event.inputs.surah_number }} \
+          --start ${{ github.event.inputs.start_ayah }} \
+          --end ${{ github.event.inputs.end_ayah }} \
+          --background "${{ github.event.inputs.background_source }}"
+
+    - name: Upload video artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Quran-Video-Surah${{ github.event.inputs.surah_number }}-${{ github.event.inputs.start_ayah }}-${{ github.event.inputs.end_ayah }}
+        path: output/*.mp4
+        if-no-files-found: error
+        retention-days: 7

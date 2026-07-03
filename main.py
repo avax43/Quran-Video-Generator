@@ -1,6 +1,7 @@
 import time
 import os
 import sys
+import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 # Setup path for src directory helpers and config wrapper
@@ -21,10 +22,24 @@ def process_single_ayah(task_info):
     return ayah_num, assets
 
 if __name__ == "__main__":
+    # Parse optional CLI arguments (override config.json when provided)
+    parser = argparse.ArgumentParser(description="Quran Video Generator")
+    parser.add_argument("--surah",      type=int, help="Surah number (1-114)")
+    parser.add_argument("--start",      type=int, help="Start Ayah number")
+    parser.add_argument("--end",        type=int, help="End Ayah number")
+    parser.add_argument("--background", type=str, help="Background image/video path")
+    args = parser.parse_args()
+
+    # Override config values with CLI arguments when supplied
+    if args.surah:      config.SURAH_NUMBER      = args.surah
+    if args.start:      config.START_AYAH        = args.start
+    if args.end:        config.END_AYAH          = args.end
+    if args.background: config.BACKGROUND_SOURCE = args.background
+
     start_time = time.time()
-    
+
     # 1. Pre-run Cleanup (MANDATORY)
-    utils.prepare_directories(clear_temp=True) 
+    utils.prepare_directories(clear_temp=True)
     
     print("Loading data...")
     quran_text_data = utils.load_json_data("quran-uthmani-corrected.json")["data"]["surahs"]
