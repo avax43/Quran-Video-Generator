@@ -29,8 +29,24 @@ gen/
    - FFmpeg installed and added to your system PATH
    - Google Chrome or Chromium (needed for `html2image`)
 
-2. **Installation**:
-   Clone the repository and install the dependencies:
+### ⚙️ Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/quran-video-generator.git
+   cd quran-video-generator
+   ```
+
+2. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On Linux/macOS:
+   source venv/bin/activate
+   ```
+
+3. Install the dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -51,13 +67,9 @@ Edit the `config.json` file in the root directory to choose the Surah, Ayah rang
 }
 ```
 
-Then run the main script:
+Run the main script:
 ```bash
 python main.py
 ```
 
-The final output will be saved in the `output/` folder.
-
-## License
-
-MIT License.
+The output will be saved in the `output/` folder.

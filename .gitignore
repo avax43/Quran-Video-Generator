@@ -1,25 +1,7 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Caches and temporary folders
-cache/
-temp_images/
-audio_cache/
-
-# Output directory for generated videos
-output/
-
-# Virtual Environment
 Lib/
-Include/
 Scripts/
+cache/
+output/
 pyvenv.cfg
-.venv/
-venv/
-ENV/
-
-# OS files
-.DS_Store
-Thumbs.db
+src/__pycache__/
+Include
