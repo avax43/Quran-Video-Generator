@@ -16,7 +16,7 @@ on:
         required: true
         default: '3'
       background_source:
-        description: 'Background filename only (e.g. background4.png)'
+        description: 'Background filename only (e.g. background6.png)'
         required: true
         default: 'background6.png'
 
@@ -47,17 +47,23 @@ jobs:
         pip install -r requirements.txt
 
     - name: Generate video
+      id: gen_video
       run: |
         python main.py \
           --surah ${{ github.event.inputs.surah_number }} \
           --start ${{ github.event.inputs.start_ayah }} \
           --end ${{ github.event.inputs.end_ayah }} \
           --background "${{ github.event.inputs.background_source }}"
+        
+        # Find the generated file path dynamically to pass to the upload step
+        VIDEO_PATH=$(ls output/*.mp4 | head -n 1)
+        echo "video_path=$VIDEO_PATH" >> $GITHUB_OUTPUT
 
     - name: Upload video artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: Quran-Video-Surah${{ github.event.inputs.surah_number }}-${{ github.event.inputs.start_ayah }}-${{ github.event.inputs.end_ayah }}
-        path: output/*.mp4
+        path: ${{ steps.gen_video.outputs.video_path }}
+        archive: false
         if-no-files-found: error
         retention-days: 7
