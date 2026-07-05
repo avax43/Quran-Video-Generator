@@ -6,17 +6,17 @@ on:
       surah_number:
         description: 'Surah number (1-114)'
         required: true
-        default: '108'
+        default: '2'
       start_ayah:
         description: 'Start Ayah number'
         required: true
-        default: '1'
+        default: '255'
       end_ayah:
         description: 'End Ayah number'
         required: true
-        default: '3'
+        default: '255'
       background_source:
-        description: 'Background filename only (e.g. background6.png)'
+        description: 'Background filename (background6.png)'
         required: true
         default: 'background6.png'
 
